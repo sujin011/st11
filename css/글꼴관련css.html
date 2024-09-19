@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글꼴관련css.html</title>
+  <style>
+    span.title{
+      font-weight: 600;
+    }
+    section{
+      background-color: #ccc;
+      color:#00f;
+      /* font-size:100%; */
+      /* font-size:14px; */ /*10.5pt*/
+      /* font-size:0.875%; */
+      /* font-size:0.875em; 16px->1em 계산하는 방법 */
+      /* 
+      font-size 기본
+      16px 14pt 1em 100% */
+      font-size: 1em;
+      /* line-height: 100%; */
+      /* line-height: normal; */
+      line-height: 1.4;
+    }
+    span{
+      color: #f00;
+    }
+    .title{
+      font-weight: 800;
+    }
+    .section2 span{
+      color:#0f0;
+    }
+  body{
+    color:#f0f;
+  }
+  </style>
+</head>
+<body>
+  <!-- section.section$*3>p>lorem -->
+  <section class="section1">
+    <p>Lorem <span class="title">ipsum</span> dolor sit amet consectetur, adipisicing elit. Nesciunt eveniet in laudantium? Nesciunt tempore maxime sit dolor, alias vel asperiores dolore necessitatibus eveniet culpa similique, quibusdam voluptate earum a expedita!</p>
+  </section>
+  <section class="section2">
+    <p>Iste <span>fugiat</span> possimus voluptates quas id perferendis eaque illo dolor unde reprehenderit tempora eveniet tempore dolore qui autem totam blanditiis nisi quis, ab deleniti alias accusamus eos reiciendis voluptas. Pariatur.</p>
+  </section>
+  <section class="section3">
+    <p>Est <span>voluptatibus</span> accusamus dignissimos nobis deleniti consequatur ullam non at dolorem alias eum perspiciatis debitis neque quia consequuntur molestias nemo odio, illo enim, eaque iste tempore. Dolor omnis animi eligendi?</p>
+  </section>
+
+  <!-- p>a>{글꼴을 상속받지않는 a태그} -->
+   <!-- a태그의 글자색(color)을 지정하려면 조상아닌
+   a태그 본인에게 color 지정
+   -->
+  <p><a href="">글꼴을 상속받지않는 a태그</a></p>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, error iste aliquam aperiam a assumenda consectetur laboriosam nisi deleniti dolorum ipsum asperiores quos consequuntur architecto perspiciatis et. Ipsam, similique consectetur.</p>
+</body>
+</html>
