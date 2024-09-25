@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>word-break</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        margin: 20px auto;
+        width: 400px;
+        border: 1px solid #000;
+      }
+      .box1 {
+        word-break: keep-all;
+        text-align: center;
+      }
+      .box2{
+        word-break: normal;
+        text-align: center;
+      }
+      .box3{
+        word-break: break-all;
+        /* 영어도 단어단위 word wrap 아니라 문자 단위로 wrap */
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="box box1">
+      무혼거비어 리라젚을 당뉸으미앨르다 자뻐엄옹미 읻아염지한다 실아는
+      훙거치구넴소고 저딥옵옾이, 햐효오고 하다즈를, 마브룽한테서 더아딘은,
+      자돶을, 스오바에 어탐히막다를 활안랄은 하뎡 노농디아는 킨아뎌와 히가꼬로
+    </div>
+    <div class="box box2">
+      무혼거비어 리라젚을 당뉸으미앨르다 자뻐엄옹미 읻아염지한다 실아는
+      훙거치구넴소고 저딥옵옾이, 햐효오고 하다즈를, 마브룽한테서 더아딘은,
+      자돶을, 스오바에 어탐히막다를 활안랄은 하뎡 노농디아는 킨아뎌와 히가꼬로
+    </div>
+    <div class="box box3">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+      rerum inventore nam, temporibus harum natus nesciunt ipsam dolor delectus.
+    </div>
+    <div class="box box4">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae repellat
+      rerum inventore nam, temporibus harum natus nesciunt ipsam dolor delectus.
+    </div>
+  </body>
+</html>
