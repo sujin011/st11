@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-layout1</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    .wrap{
+      width:85%; margin:50px auto;
+      background-color: #ccc;
+    }
+    .container{
+      width: 600px;
+      background-color: magenta;
+    }
+    .item{
+      background-color: dodgerblue;
+      padding: 0.5em;
+    }
+    .flex-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:2px;
+        justify-content: space-between;
+      }
+      .item{
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: calc(25% - 2px);
+      }
+      .item10{
+        flex-grow: 1;
+        flex-shrink: 1;
+        width:75%;
+      }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container flex-container">
+      <div class="item item">item1</div>
+      <div class="item item">item2</div>
+      <div class="item item">item3</div>
+      <div class="item item">item4</div>
+      <div class="item item">item5</div>
+      <div class="item item">item6</div>
+      <div class="item item">item7</div>
+      <div class="item item">item8</div>
+      <div class="item item">item9</div>
+      <div class="item item">item10</div>
+    </div>
+  </div>
+</body>
+</html>
