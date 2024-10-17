@@ -320,7 +320,66 @@ color:var(--default);
   background: url(../img/common/ic-outlink-circle-hover.png) no-repeat center;
   background-size: contain;
 }
+
+/* .main-content__title */
+.navercorp.main .main-content__title{
+  /* flex item */
+  flex-shrink: 0;
+  position: relative;
+  width: 340px;
+  z-index: 10;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+  color: var(--default);
+
+}
+
+.navercorp.main .main-content__title::after{
+  content: "";
+  display: block;
+  width: 53px; height: 46px;
+  margin-top: 37px;
+  background: var(--ic-title-arrow) no-repeat center;
+  background-size: contain;
+
+}
+
+.navercorp.main .main-content__title strong{
+  display: block;
+}
+
+.navercorp.main .main-content__title .time{
+  display: flex;
+  margin-top: 20px;
+  letter-spacing: 0;
+}
+
+/* animation추가 */
+.navercorp.main .main-content__title .time .colon{
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+/* .main-content__title의 .btn-arrow 아이콘표시 */
+.navercorp.main .main-content__title .btn-arrow{
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 53px; height: 60px;
+  background: var(--ic-arrow-down)
+  no-repeat center;
+  background-size: contain;
+}
+
 @media (max-width:1919px){
+  .navercorp.main .main-content__inner{
+    max-width: 1600px;
+  }
+  .navercorp.main .cont-summary{
+    padding: 130px 40px 60px;
+  }
   .navercorp.main .cont-summary .cont__area.type-b .cont__list{
     grid-template-rows: 334px 155px 155px;
   }
@@ -343,6 +402,9 @@ color:var(--default);
     letter-spacing: normal;
     } 
 
+  .navercorp.main .main-content__title{
+    width: 287px;
+  }
 }
 /*@media (max-width:1919px)*/
 
@@ -353,6 +415,9 @@ color:var(--default);
   .navercorp.main .main-content__inner{
     max-width: none;
     flex-direction: column;
+  }
+  .navercorp.main .cont-summary{
+    padding: 92px 30px 0;
   }
   .navercorp.main .cont__area{
     margin-top:24px
@@ -415,10 +480,19 @@ color:var(--default);
   .navercorp.main .cont-summary .ir .title{
     margin-top: 2px;
   }
+
+  .navercorp.main .main-content__title{
+    width: 100%;
+    font-size: 36px;
+
+  }
 }
 /*@media (max-width:1599px)*/
 
 @media (max-width:1023px){
+  .navercorp.main .cont-summary{
+    padding: 110px 30px 0;
+  }
 
   /*.cont-summary  */
   .navercorp.main .cont-summary .cont__list{
@@ -476,6 +550,9 @@ color:var(--default);
 /*@media (max-width:1023px)*/
 
 @media (max-width:767px){
+  .navercorp.main .cont-summary{
+    padding: 110px 20px 0;
+  }
   .navercorp.main .cont-summary .cont__list{
     gap:12px 7px;
  }
@@ -532,6 +609,10 @@ color:var(--default);
 }
 .navercorp.main .cont-summary .stock .num-info::after{
   content: none;
+}
+
+.navercorp.main .main-content__title{
+  font-size: 34px;
 }
 }
 /*@media (max-width:767px)*/
