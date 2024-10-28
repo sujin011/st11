@@ -29,6 +29,7 @@
     .mybanner{
       margin-top: var(--banner-top-margin);
       margin-bottom: var(--banner-bottom-margin);
+      background-color: #dd6;
     }
     .mybanner__inner{
       max-width: var(--banner-max-width);
@@ -93,3 +94,105 @@
             #footer .inner .bt_top_right .bt_sns a svg path {fill:#ababab;-webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s;  transition: all 0.3s;}
             #footer .inner .bt_top_right .bt_sns a:hover svg path {fill:#111;}    
             /* footer bt-sns 끝 */
+
+            /* 루미너스 footer 디자인 수정 */
+
+            /* //루미너스 footer 디자인 수정  */
+          #footer{
+            background-color: #3a3a3a;
+          }
+          #footer .inner{
+            color: #cfcfcf;
+          }
+          #footer .bt_info .title{
+            display: none;
+          }
+
+          /* 글자색상변경 */
+          #footer .inner .bt_logo a,
+          #footer .inner .bt_util ul li a,
+          #footer .inner .bt_util ul li a strong,
+          #footer .inner .bt_info .bt_info_list,
+          #footer .inner .bt_wrap2 .bt_copyright,
+          #footer .inner .bt_wrap .bt_boardinfo li a,
+          #footer .inner .bt_cscenter .bt_txt01,
+          #footer .inner .bt_cscenter .bt_txt02{
+           color:inherit;
+          }
+          /* [속성="값"] */
+          /* flex item order를 이용한 순서 변경 */
+          #footer .inner .bt_info .bt_info_list{
+            max-width: 550px;
+          }
+          #footer .bt_info .bt_info_list [data-ez-item="company_name"]{order: 1;}
+          #footer .bt_info .bt_info_list [data-ez-item="president_name"]{order: 2;}
+          #footer .bt_info .bt_info_list [data-ez-item="address"]{order: 5;}
+          #footer .bt_info .bt_info_list [data-ez-item="phone"]{order: 6;}
+          #footer .bt_info .bt_info_list [data-ez-item="company_regno"]{order: 3;}
+          #footer .bt_info .bt_info_list [data-ez-item="network_regno"]{order: 4;}
+          #footer .bt_info .bt_info_list [data-ez-item="cpo_name"]{order: 7;}
+
+          #footer .bt_info .bt_info_list [data-ez-item="company_name"] span:first-child{
+            display: none;
+          }
+          #footer .bt_info .bt_info_list [data-ez-item="address"] span:first-child{
+            display: none;
+          }
+          #footer .inner .bt_bank{
+            display: none;
+          }
+
+          #footer .inner .bt_wrap .bt_boardinfo{
+            margin-left: auto;
+            width: 180px;
+          }
+          #footer .inner .bt_wrap .bt_boardinfo .title{
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 2;
+            margin-bottom: 11px;
+          }
+          #footer .inner .bt_wrap .bt_boardinfo li a{
+           display: block;
+           font-size: 14px;
+           letter-spacing: 0.5px;
+           font-weight: 400;
+           line-height: 2;
+          }
+          #footer .inner .bt_wrap .bt_cscenter{
+            margin-left: 20px; /*cscenter와 boardinfo 사이에 여백*/
+          }
+          #footer .inner .bt_wrap .bt_cscenter,
+          #footer .inner .bt_wrap2 .bt_sns{width: 200px;}
+          #footer .bt_cscenter .title{
+            display: none;
+          }
+          #footer .inner .bt_cscenter .bt_txt01{
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+          }
+
+          #footer .inner .bt_cscenter .bt_txt02{
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+          }
+
+          /* 클래스명 bt_ 시작하는 요소 */
+          #footer .bt_cscenter [class^="bt_"]>strong:first-child{
+           display: none;
+          }
+          /* padding-right:10 해당하는 요소를 무력화 */
+          #footer .inner .pdr10{
+            display: none;
+          }
+          #footer .inner .bt_wrap2{
+            border-top: 0 none;
+          }
+          #footer .inner .bt_wrap2 .bt_sns .title{display: none;}
+          #footer .inner .bt_wrap2 .bt_sns a{padding:0}
+          #footer .inner .bt-wrap2 .bt_sns a:nth-of-type(1){margin-left:0;}
+
+          #footer .inner .bt_wrap{margin-bottom:20px;}
+          #footer .inner .bt_wrap2{padding-top:0;}
