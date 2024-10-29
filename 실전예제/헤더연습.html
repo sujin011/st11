@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>헤더연습</title>
+  <style>
+    *{margin: 0; padding: 0; }
+    ul,ol,li{list-style: none;}
+    body{background-color: #f6f;}
+    #container{
+      background-color: #66f;
+      padding: 2rem;
+      position: relative;
+    }
+    /* 공통요소 1024이상*/
+    .display_pc_only{display: block;
+    }
+    .tb_m_display{display: none;}
+    .tb_only{ display:none ;  }
+    .m-only{ display: none ;    }
+    /* 헤더 시작 */
+    #header{
+      position: relative;
+      z-index: 998; /*#container 보다 더 상위 레이어*/
+      width: 100%;
+      padding:22px 0;
+      background-color: rgba(255,255,255,0.5);
+    }
+    #header.fixed{
+      position: fixed;
+      left:0; top:0;
+    }
+    #header .inner{
+      width:92%;
+      max-width: 1680px;/*헤더가 1680 이상으로 되지 말아라*/
+      background-color: #ff6;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      position: relative; /*.top_mypage의 기준요소*/
+    }
+    #header .inner .toparea{background-color: #ccc;}
+    #header.fixed .inner .toparea{display: none;}
+    #header .inner .top_nav_box{
+      background-color: #996;/*삭제*/
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; 
+      /*교차축의 기본값이 normal로 stretch로 정렬된것을 막아주기 위해 
+      align-items: flex-start*/
+    }
+    /* 
+    1 mypage
+        1-1 네비게이션 동일 선상 위치
+        1-2 부모의 오른쪽 아래 위치
+        position:absolute; -> 기준요소 지정
+    2 m메뉴 pc 화면 표시x 1024 보다 작은 화면에서 표시(1025이상 화면 표시x)
+      ->@media (max-width:1024px){}
+    */
+    #header .inner .top_nav_box .top_logo{
+      background-color: #3cc;/*삭제*/
+    }
+    /* 스크롤되었을 때의 .top_logo를 지정 */
+    #header.fixed .inner .top_nav_box .top_logo{
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%,-50%);
+    }
+    #header .inner .top_nav_box div[data-ez-module="menu-main/1"]{
+      background-color: #cc3;/*삭제*/
+    }
+
+     /* 
+    1 mypage
+        1-1 네비게이션 동일 선상 위치
+        1-2 부모의 오른쪽 아래 위치
+        position:absolute; -> 기준요소 지정
+    */
+    #header .inner .top_nav_box .top_mypage{
+      background-color: #c3c;/*삭제*/
+      position: absolute;
+      right: 0; bottom:0;
+
+    }
+    /*
+    2 m메뉴 pc 화면 표시x 1024 보다 작은 화면에서 표시(1025이상 화면 표시x)
+      ->@media (max-width:1024px){}
+    */
+    #header .inner .top_nav_box .top_sidebar{
+      background-color: #33c;/*삭제*/
+      display: none;/*1024이상일 경우에는 햄버거메뉴표싵*/
+    }
+
+    /* 헤더의 1024보다 작은 화면에 레이아웃 */
+    @media (max-width:1024px){
+      /* 공통요소 */
+      .display_pc_only{display: none ;}
+    .tb_m_display{display: block;}
+    .tb_only{ display: block ;  }
+    .m-only{ display: none ;    }
+
+
+      #header .inner .top_nav_box .top_sidebar{
+        display: block;/*너비가 1024보다 작은 경우는 햄버거메뉴 표시*/
+      }
+
+      /* 1024보다 작은 화면에서 .top_logo가 가운데에 오기 */
+      #header .inner .top_nav_box .top_logo{
+        position: absolute;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    @media (max-width:767px){
+       /* 공통요소 */
+    .display_pc_only{display: none ;    }
+    .tb_m_display{display: block;}
+    .tb_only{ display:none ;  }
+    .m-only{ display: block ;    }
+
+    }
+  
+  </style>
+</head>
+<body>
+  <header id="header" class="fixed">
+    <div class="inner">
+    <div class="toparea display_pc_only ">toparea</div>
+    <div id="top_nav_box" class="top_nav_box">
+      <div class="top_logo">로고</div>
+      <!-- div[data-ez-module="menu-main/1"] -->
+      <div data-ez-module="menu-main/1" class="display_pc_only">네비게이션</div>
+      <div class="top_mypage">mypage</div>
+      <div class="top_sidebar tb_m_display ">M메뉴</div>
+    </div>
+  </div>  <!--//.inner  -->
+  </header>
+  <div id="container">
+    <div id="content"> 페이지 주 내용</div>
+  </div>
+</body>
+</html>

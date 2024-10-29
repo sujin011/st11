@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>닫기버튼</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    /* 닫기버튼 */
+    .btnClose{
+      background-color: transparent; /*button 요소 기본 배경색 제거*/
+      border: 0; /*button 요소 기본 테두리 제거*/
+      outline: none; /*button 요소 focus가 되었을 때 outline제거*/
+      background-color: #ccc; /*테스트 후 삭제*/
+      color: transparent; /*button 사이에 입력된 글자 표시x*/
+      text-indent: 150%;
+      white-space: nowrap;
+      overflow: hidden;
+      line-height: 0; /*닫기 x 버튼 외의 공간 제거*/
+    }
+    .btnClose .icon.icoClose{
+      background-color: #ff6;
+      display: block;
+      position: relative; /*:before :after 기준요소*/
+      width: 24px; height: 24px; /*버튼의 크기 지정*/
+      transform: rotate(45deg);
+      margin: 0 auto;
+    }
+    .btnClose .icon.icoClose:before{
+      content: "";
+      position: absolute;
+      top: 0; right: 50%;
+      transform: translateX(50%);
+      width: 2px;
+      height: 100%; /*.icoClose 요소의 크기를 따른다*/
+      background-color: #000;
+      transition: all 0.3s ease-out;
+    }
+    .btnClose .icon.icoClose::after{
+      content: "";
+      position: absolute;
+      top: 50%; right: 0;
+      transform: translateY(-50%);
+      height: 2px; width: 100%;
+      background-color: #000;
+      transition: all 0.3s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <button type="button" class="btnClose">
+    <i class="icon icoClose"></i>  
+    닫기
+  </button>
+</body>
+</html>
